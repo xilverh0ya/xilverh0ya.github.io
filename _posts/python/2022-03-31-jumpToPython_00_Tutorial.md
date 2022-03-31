@@ -24,7 +24,8 @@ toc_icon: "bookmark"
 test  
 
 ```bash
-git push origin master
+$git push origin master
+$git clone (mossiggangi)
 ```
 
 ```python
