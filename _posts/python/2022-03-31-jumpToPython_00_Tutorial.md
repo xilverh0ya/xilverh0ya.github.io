@@ -17,27 +17,102 @@ toc_icon: "bookmark"
 
 <br>
 
-# 작성중
+## 0. 교재소개  
+<br>
 
-작성예정입니다.  
+![book](https://image.aladin.co.kr/product/19483/1/cover500/k582635822_1.jpg)  
+<br>
 
-test  
+지은이 : 박응용  
+출판사 : 이지스퍼블리싱
 
+이 책은 파이썬이란 언어를 처음 접해보는 독자들과 프로그래밍을 한 번도 해 본적이 없는 사람들을 대상으로 한다. 프로그래밍을 할 때 사용되는 전문적인 용어들을 알기 쉽게 풀어서 쓰려고 노력하였으며, 파이썬이란 언어의 개별적인 특성만을 강조하지 않고 프로그래밍 전반에 관한 사항을 파이썬이란 언어를 통해 알 수 있도록 알기 쉽게 설명하였다.
+
+파이썬에 대한 기본적인 지식을 알고 있는 사람이라도 이 책은 파이썬 프로그래밍에 대한 흥미를 가질 수 있는 좋은 안내서가 될 것이다. 이 책의 목표는 독자가 파이썬을 통해 프로그래밍에 대한 전반적인 이해를 갖게하는 것이며, 또 파이썬이라는 도구를 이용하여 원하는 프로그램을 쉽고 재미있게 만들 수 있게 하는 것이다.
+
+"점프 투 파이썬" 이나 파이썬에 대한 질문은 최근 오픈한 파이썬 게시판 서비스인 파이보를 활용해 보자.
+
+* 파이보 - [https://pybo.kr](https://pybo.kr)
+  
+이 책은 [위키독스](https://wikidocs.net/book/1)에도 올라와 있다.
+___ 
+
+## 1. 파이썬 설치 방법 (윈도우 기준)
+> - [파이썬 공식 홈페이지의 다운로드 페이지](www.python.org/downloads)에서 윈도우용 파이썬 언어 패키지 다운로드
+>   - python 3.x로 시작하는 버전 중 가장 최근 버전 다운로드
+>   - <img src="/assets/forPost/pythonBasic/jumpToPy/pyDownloadPage.png" height="550px" width="600px">
+> - 다운로드 받은 패키지의 인스톨러를 실행 후, 'Install Now' 선택
+>   - Add Python 3.x to PATH 반드시 체크
+>   - <img src="/assets/forPost/pythonBasic/jumpToPy/pyDownInitial.png" height="550px" width="600px">  
+> - 설치 완료 후 [close]를 클릭해서 종료
+> - 파이썬이 정상적으로 설치됐는지 확인하는 법
+>   - [시작 -> 명령 프롬프트]
+>   - <img src="/assets/forPost/pythonBasic/jumpToPy/pyCheck1.png" height="550px" width="600px"> 
+>   - 아래 명령어 입력
 ```bash
-$git push origin master
-$git clone (mossiggangi)
+$ python
 ```
-
-```python
-print('helloWorld')
-```
-
-```java
-public static void main(String[] args){
-    System.out.println("Hello World!");
-}
-```
+>   - <img src="/assets/forPost/pythonBasic/jumpToPy/pyCheck2.png" height="550px" width="600px"> 
+>   - 버젼과 >>> 명령어 입력창이 나타나면 설치 성공
 
 ___
 
-test page
+## 2.파이썬 둘러보기
+> - 설치 확인 CMD 화면에서 기초 실습을 해보자.
+>   - 사칙연산
+```bash
+>>>> 1 + 2
+3
+>>>> 5 - 1
+4
+>>>> 3 / 2.4
+1.25
+>>>> 3 * 9
+27
+```
+>     - 곱하기와 나누기는 우리가 일반적으로 알고있는 단어와 다르니 주의하자!
+>     - 결과 값이 바로바로 나오는데 이는 **인터프리터**언어의 특징이다.(인터프리터가 무엇인지는 후에 알아보도록 하자.)
+>   - 변수에 숫자 대입하고 계산하기
+```bash
+>>>> a = 1
+>>>> b = 2
+>>>> a + b
+3
+```
+>     - a에 1을, b에 2를 대입한 후, a + b를 실행하면 3이 결과값으로 출력된다.
+>   - 변수에 문자 대입하고 출력하기
+```bash
+>>>> a = "Python"
+>>>> print(a)
+Python
+>>>> a
+Python
+```
+>     - 대화형 인터프리터 상태에서는 print함수를 따로 쓰지 않아도 변수 이름만 입력해서 a의 값을 출력할 수 있다.
+>   - 대화형 인터프리터 종료하는 방법
+>     - Ctrl + Z -> Enter
+>     - Sys 모듈을 사용
+```bash
+>>>> import sys
+>>>> sys.exit()
+$
+```  
+
+___
+
+## 3. 파이썬과 에디터
+> - 파이썬에서는 기본 에디터인 IDLE를 제공한다.
+>   - 실행 방법 : [시작 - Python3.x - IDLE]
+>   - IDLE에서는 한줄 한줄 실행이 아닌 여러줄을 한꺼번에 (순차적으로) 실행할 수 있다.
+> - 추천 에디터
+>   - 비주얼 스튜디오 코드(VS Code) : 거의 모든 언어 지원
+>   - 파이참(PyCharm) : 파이썬 전용 에디터
+>   - 각 설치 방법 및 활용 방법은 구글링!  
+
+___
+
+<!-- 
+## 4. 대화형 인터프리터  
+-->
+
+이상으로 파이썬을 공부하기 전 튜토리얼을 마친다.

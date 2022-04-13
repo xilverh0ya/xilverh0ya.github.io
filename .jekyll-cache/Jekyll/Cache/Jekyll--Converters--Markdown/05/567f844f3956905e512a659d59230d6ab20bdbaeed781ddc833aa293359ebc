@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-13T17:47:32+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Xilverlog</title><subtitle>느리지만 점점 성장하는 개발자입니다.</subtitle><author><name>이은호</name></author><entry><title type="html">[2022) Jump to Python Study 00. Tutorial]</title><link href="http://localhost:4000/python/jumpToPython_00_Tutorial/" rel="alternate" type="text/html" title="[2022) Jump to Python Study 00. Tutorial]" /><published>2022-03-31T00:00:00+09:00</published><updated>2022-03-31T00:00:00+09:00</updated><id>http://localhost:4000/python/jumpToPython_00_Tutorial</id><content type="html" xml:base="http://localhost:4000/python/jumpToPython_00_Tutorial/"><![CDATA[<p><br /></p>
+I"�<p><br /></p>
 
 <h2 id="0-교재소개">0. 교재소개</h2>
 <p><br /></p>
@@ -127,23 +127,8 @@ Python
       <ul>
         <li>비주얼 스튜디오 코드(VS Code) : 거의 모든 언어 지원</li>
         <li>파이참(PyCharm) : 파이썬 전용 에디터</li>
-        <li>각 설치 방법 및 활용 방법은 구글링!</li>
       </ul>
     </li>
   </ul>
 </blockquote>
-
-<hr />
-
-<!-- 
-## 4. 대화형 인터프리터  
--->
-
-<p>이상으로 파이썬을 공부하기 전 튜토리얼을 마친다.</p>]]></content><author><name>이은호</name></author><category term="python" /><category term="minimal mistakes" /><category term="jekyll" /><category term="blog" /><category term="favicon" /><category term="disqus" /><category term="google analytics" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">[Git test]</title><link href="http://localhost:4000/git%20&%20github/gitTestPost/" rel="alternate" type="text/html" title="[Git test]" /><published>2022-03-29T00:00:00+09:00</published><updated>2022-03-29T00:00:00+09:00</updated><id>http://localhost:4000/git%20&amp;%20github/gitTestPost</id><content type="html" xml:base="http://localhost:4000/git%20&amp;%20github/gitTestPost/"><![CDATA[<p><br /></p>
-
-<h2 id="test-2">Test 2</h2>
-
-<p>for git</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$git</span> commit <span class="nt">-m</span> <span class="s2">"Initial Commit"</span>
-</code></pre></div></div>]]></content><author><name>이은호</name></author><category term="Git &amp; Github" /><category term="minimal mistakes" /><category term="jekyll" /><category term="blog" /><category term="favicon" /><category term="disqus" /><category term="google analytics" /><summary type="html"><![CDATA[]]></summary></entry></feed>
+:ET
