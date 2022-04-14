@@ -1,0 +1,90 @@
+I"<p><br /></p>
+
+<h2 id="0-본격적인-시작에-앞서">0. 본격적인 시작에 앞서</h2>
+<blockquote>
+  <ul>
+    <li>파이썬이란?
+      <ul>
+        <li>귀도 반 로섬(Guido Van Rossum)이 개발한 인터프리터 언어.</li>
+        <li>컴퓨터 프로그래밍 교육을 위해 많이 사용하지만, 기업의 실무를 위해서도 많이 사용하는 언어. Ex) 구글
+          <ul>
+            <li>구글에서 만든 소프트웨어의 50% 이상이 파이썬으로 작성됐다고 한다.</li>
+          </ul>
+        </li>
+        <li>파이썬 프로그램은 공동 작업과 유지 보수가 매우 쉽고 편하다.
+          <ul>
+            <li>파이썬의 문법 자체가 사람에게 친화적이라 알아보기 쉽고, 가독성이 매우 좋다. (파이썬 식 프로그래밍을 하라는 말이 있을 정도)</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>파이썬의 특징
+      <ul>
+        <li>파이썬은 <strong>‘인간다운 언어’</strong>다.
+          <ul>
+            <li>사람이 생각하는 방식을 그대로 표현</li>
+            <li>후에 문법을 배울 수록 느끼게 된다.
+              <div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="mi">4</span> <span class="ow">in</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span> <span class="p">]</span> <span class="p">:</span> <span class="k">print</span><span class="p">(</span><span class="s">"4 in Array"</span><span class="p">)</span>
+</code></pre></div>              </div>
+              <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>만약 4가 [ 1, 2, 3, 4 ] 안에 있다면, '4 in Array'를 출력한다.
+</code></pre></div>              </div>
+            </li>
+            <li>프로그램을 모르더라도 직관적으로 어떤 뜻인지 알 수 있을 정도로 <strong>사람 친화적</strong>이다.</li>
+          </ul>
+        </li>
+        <li>문법이 쉬워서 빠르게 배울 수 있다.
+          <ul>
+            <li>파이썬은 문법 자체가 아주 쉽고 간결하다.</li>
+            <li>문법이 사람의 사고 체계와 매우 닮아 있다.</li>
+          </ul>
+        </li>
+        <li>무료지만 강력함
+          <ul>
+            <li>파이썬은 오픈 소스이기 때문에 당연히 무료</li>
+            <li>만들고자 하는 프로그램의 대부분을 파이썬으로 만들 수 있음</li>
+            <li>시스템 프로그래밍이나 하드웨어 제어같은 복잡하고 반복 연산이 많은 프로그램은 파이썬과 어울리지 않음.</li>
+            <li>하지만 파이썬은 이런 약점을 극복할 수 있게 다른 언어로 만든 프로그램을 파이썬 프로그램에 포함시킬 수 있음.</li>
+            <li>특히 C와 찰떡궁합</li>
+            <li>프로그램의 전반적 뼈대는 파이썬으로 제작, 빠른 실행 속도가 필요한 부분은 C로 제작할 수 있음</li>
+          </ul>
+        </li>
+        <li>간결하다.
+          <ul>
+            <li>파이썬은 가장 좋은 방법 1가지만 사용하는 것을 선호.</li>
+            <li>다른 사람이 작업한 소스 코드도 한 눈에 들어와 이해하기 쉽기 때문에 공동 작업과 유지 보수에 용이</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#simple.py
+</span><span class="n">languages</span> <span class="o">=</span> <span class="p">[</span> <span class="s">'python'</span><span class="p">,</span> <span class="s">'perl'</span><span class="p">,</span> <span class="s">'c'</span><span class="p">,</span> <span class="s">'java'</span> <span class="p">]</span>
+
+<span class="k">for</span> <span class="n">lang</span> <span class="ow">in</span> <span class="n">languages</span> <span class="p">:</span>
+    <span class="k">if</span> <span class="n">lang</span> <span class="ow">in</span> <span class="p">[</span> <span class="s">'python'</span><span class="p">,</span> <span class="s">'perl'</span> <span class="p">]</span> <span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"%6s need interpreter"</span> <span class="o">%</span> <span class="n">lang</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">lang</span> <span class="ow">in</span> <span class="p">[</span> <span class="s">'c'</span><span class="p">,</span> <span class="s">'java'</span> <span class="p">]</span> <span class="p">:</span>
+        <span class="k">print</span> <span class="n">lang</span> <span class="ow">in</span> <span class="p">[</span> <span class="s">'c'</span><span class="p">,</span> <span class="s">'java'</span> <span class="p">]</span>
+    <span class="k">else</span> <span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"should not reach here"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<blockquote>
+  <ul>
+    <li>파이썬은 줄을 잘 맞추는게 강제된다.
+      <ul>
+        <li>다른 언어와 달리 단락을 괄호가 아닌 들여쓰기로 구분하기 때문</li>
+        <li>파이썬은 줄을 맞추지 않으면 실행되지 않는다.</li>
+        <li>따라서 개발자의 습관과 상관없이 가독성 좋은 코드가 나와 공동 작업과 유지 보수에 용이한 것이다.
+          <ul>
+            <li>누가 작성하던 쉽게 이해할 수 있다는 뜻</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li></li>
+  </ul>
+</blockquote>
+:ET
