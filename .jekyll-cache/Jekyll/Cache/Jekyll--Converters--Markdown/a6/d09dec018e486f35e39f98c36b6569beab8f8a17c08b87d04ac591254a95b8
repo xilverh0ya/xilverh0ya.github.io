@@ -1,0 +1,211 @@
+I"e(<p><br /></p>
+
+<h2 id="0-들어가기에-앞서">0. 들어가기에 앞서</h2>
+<blockquote>
+  <ul>
+    <li>어떤 프로그래밍 언어든 ‘그 언어의 자료형을 알고 이해할 수 있다면 이미 그 언어의 절반을 터득한 것이나 다름없다.’는 말이 있다.</li>
+    <li>자료형
+      <ul>
+        <li>프로그래밍 할 때 쓰이는 숫자, 문자열 등 자료 형태로 사용하는 모든 것</li>
+        <li>프로그램의 기본이자 핵심 단위</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<h2 id="1-숫자형">1. 숫자형</h2>
+<blockquote>
+  <ul>
+    <li>숫자형이란?
+      <ul>
+        <li>숫자형(Number) : 숫자 형태로 이루어진 자료형</li>
+      </ul>
+    </li>
+  </ul>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: center">항목</th>
+        <th style="text-align: center">파이썬 사용 예</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: center">정수</td>
+        <td style="text-align: center">123, -345, 0</td>
+      </tr>
+      <tr>
+        <td style="text-align: center">실수</td>
+        <td style="text-align: center">123.45, -1234.5, 3.4e10</td>
+      </tr>
+      <tr>
+        <td style="text-align: center">8진수</td>
+        <td style="text-align: center">0o34, 0o25</td>
+      </tr>
+      <tr>
+        <td style="text-align: center">16진수</td>
+        <td style="text-align: center">0x2A, 0xFF</td>
+      </tr>
+    </tbody>
+  </table>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>숫자형은 어떻게 만들고 사용할까?
+      <ul>
+        <li>정수형(Integer) : 정수를 뜻하는 자료형</li>
+        <li>실수형(Floating-porint) : 소수접이 포함된 숫자
+          <ul>
+            <li>컴퓨터식 지수 표현 뱡식
+              <div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="mf">4.24E10</span>   <span class="c1"># = 4.24 * (10 ** 10)
+</span><span class="n">a</span> <span class="o">=</span> <span class="mf">4.24</span><span class="n">e</span><span class="o">~</span><span class="mi">10</span>  <span class="c1"># = 4.24 * (10 ** -10)
+</span></code></pre></div>              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>8진수(Octal)와 16진수(Hexadecimal)
+      <ul>
+        <li>8진수 : 0o or 0O로 시작</li>
+        <li>16진수 : 0x로 시작
+          <div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="mo">0o177</span>   <span class="c1"># 8진수
+</span><span class="n">b</span> <span class="o">=</span> <span class="mh">0x8ff</span>   <span class="c1"># 16진수
+</span></code></pre></div>          </div>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>숫자를 활용하기 위한 연산자
+      <ul>
+        <li>사칙연산</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="p">)</span>    <span class="c1"># 얘는 결과값이 자동으로 실수로 변환되어 나옴
+</span></code></pre></div></div>
+
+<blockquote>
+  <ul>
+    <li>기타 유용한 연산자
+      <div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">a</span> <span class="o">**</span> <span class="n">b</span><span class="p">)</span>   <span class="c1"># a의 b 제곱(a의 b승)
+</span><span class="k">print</span><span class="p">(</span><span class="n">a</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span>    <span class="c1"># a를 b로 나눈 나머지
+</span><span class="k">print</span><span class="p">(</span><span class="n">a</span> <span class="o">//</span> <span class="n">b</span><span class="p">)</span>   <span class="c1"># a를 b로 나눈 몫
+</span></code></pre></div>      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<h2 id="2-문자열-자료형">2. 문자열 자료형</h2>
+<blockquote>
+  <ul>
+    <li>문자열(String) : 문자, 단어 등으로 구성된 문자들의 집합</li>
+    <li>문자열을 만드는 4가지 방법
+      <div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="s">"Hello world"</span>   <span class="c1"># 큰따옴표(")로 양쪽 둘러싸기
+</span><span class="n">a</span> <span class="o">=</span> <span class="s">'Hello world'</span>   <span class="c1"># 작은따옴표(')로 양쪽 둘러싸기
+# 멀티라인(Multiline)
+</span><span class="n">a</span> <span class="o">=</span> <span class="s">"""
+Life is too short
+You need Python
+"""</span>
+<span class="n">a</span> <span class="o">=</span> <span class="s">'''
+Life is too short
+You need Python
+'''</span>
+</code></pre></div>      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>문자열 안에 작은/큰따옴표를 넣고 싶다면?
+      <div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="s">"Python's favorite food is perl"</span>      <span class="c1">#  문장부호의 중복 조심
+</span><span class="n">a</span> <span class="o">=</span> <span class="s">"Python</span><span class="se">\'</span><span class="s">s favorite food is perl"</span>     <span class="c1"># 이스케이핑 문자 사용
+# 다른 이스케이핑 예시
+</span><span class="n">a</span> <span class="o">=</span> <span class="s">"Life is too short</span><span class="se">\n</span><span class="s">You need Python"</span>  <span class="c1"># 이스케이핑 + n -&gt; 개행문자
+</span></code></pre></div>      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>※이스케이핑 문자? : <a href="https://atomic0x90.github.io/c-language/2019/05/28/C-Language-escape-sequence.html">참조</a></li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>문자열 연산하기</li>
+  </ul>
+</blockquote>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="s">"Python"</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s">" is fun"</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># 문자열 연결 (Python is fun)
+</span><span class="k">print</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># 문자열 반복 (PythonPython)
+</span>
+<span class="c1"># 문자열 연산 응용
+</span><span class="k">print</span><span class="p">(</span><span class="s">"="</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">" "</span> <span class="o">*</span> <span class="mi">20</span> <span class="o">+</span> <span class="s">"Title"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"="</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+<span class="c1"># 출력 결과
+</span><span class="o">==================================================</span>
+                    <span class="n">Title</span>
+<span class="o">==================================================</span>
+</code></pre></div></div>
+
+<blockquote>
+  <ul>
+    <li>문자열 길이 구하기 : len()함수 사용
+      <div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="s">"Life is too short"</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="c1"># 출력 결과
+</span><span class="mi">17</span>
+</code></pre></div>      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li><strong>문자열 인덱싱</strong>
+      <ul>
+        <li>인덱싱(indexing) : ‘가리킨다’의 의미</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="s">"Life is too short, You need Python"</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">0</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># 출력 결과
+</span><span class="s">'e'</span>   <span class="c1"># 파이썬은 0부터 숫자를 센다.
+</span><span class="s">'L'</span>   <span class="c1"># 0 = -0
+</span><span class="s">'n'</span>   <span class="c1"># 음수 인덱싱은 뒤에서 부터(-1 부터) /// 이유는? : 0 = -0
+</span></code></pre></div></div>
+
+:ET
