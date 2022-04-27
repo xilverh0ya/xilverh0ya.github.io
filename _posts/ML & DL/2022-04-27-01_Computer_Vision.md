@@ -1,10 +1,16 @@
 ---
-layout: single
-title:  "jupyter notebook 변환하기!"
-categories: coding
-tag: [python, blog, jekyll]
+title: "[OpenCV_01.Basic and Tutorial]"
+categories:
+  - OpenCV
+tags:
+  - machine learning
+  - openCV
+  - basic
+  - tutorial
 toc: true
-author_profile: false
+toc_sticky: true
+toc_label: "Python_DataType"
+toc_icon: "bookmark"
 ---
 
 <head>
