@@ -1,5 +1,5 @@
 ---
-title: "[OpenCV_01.Basic and Tutorial]"
+title: "[(작성중)OpenCV_01.Basic and Tutorial]"
 categories:
   - OpenCV
 tags:
