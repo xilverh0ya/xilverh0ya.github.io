@@ -365,7 +365,7 @@ GitHub에서 README 파일을 작성할 때나, 블로그에 포스팅을 하거
   <p align="center"><img src="https://www.motorgraph.com/news/photo/202102/27134_86118_4323.jpg" width="400px"></p>
 
 
-## 02. 장단점
+## 2. 장단점
 - 장점
   - 문법이 쉽고 직관적
   - 지원 가능한 플랫폼과 프로그램이 다양
