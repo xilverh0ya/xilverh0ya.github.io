@@ -1,17 +1,14 @@
 ---
-title: "[Git test]"
+title: "[(작성중)Git test]"
 categories:
   - Git & Github
 tags:
-  - minimal mistakes
-  - jekyll
-  - blog
-  - favicon
-  - disqus
-  - google analytics
+  - git
+  - github
+  - tutorial
 toc: true
 toc_sticky: true
-toc_label: "GITHUB BLOG JEKYLL"
+toc_label: "Git"
 toc_icon: "bookmark"
 ---
 
