@@ -1,17 +1,20 @@
 ---
 title: "[2022) Jump to Python Study 00. Tutorial]"
 categories:
-  - python
+  - Python
 tags:
-  - minimal mistakes
-  - jekyll
-  - blog
-  - favicon
-  - disqus
-  - google analytics
+  - python
+  - basic
+  - Tutorial
+  # - minimal mistakes
+  # - jekyll
+  # - blog
+  # - favicon
+  # - disqus
+  # - google analytics
 toc: true
 toc_sticky: true
-toc_label: "GITHUB BLOG JEKYLL"
+toc_label: "Python_tutorial"
 toc_icon: "bookmark"
 ---
 

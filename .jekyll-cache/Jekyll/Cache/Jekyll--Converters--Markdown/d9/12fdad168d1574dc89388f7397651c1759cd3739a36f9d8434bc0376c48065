@@ -1,0 +1,68 @@
+I"n	<p><br /></p>
+
+<p>GitHub에서 README 파일을 작성할 때나, 블로그에 포스팅을 하거나, 간단한 문서를 만들 때 가볍게 사용하는 문서작성 용도로 자주 사용된다. 그래서 오늘은 이 마크다운 언어에 대해서 알아보려고 한다.</p>
+
+<h2 id="0-마크다운이란">0. 마크다운이란?</h2>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/300px-Markdown-mark.svg.png" alt="mdLogo" /></p>
+
+<p><br /></p>
+
+<ul>
+  <li>일반 텍스트 기반의 경량 마크업 언어</li>
+  <li>일반 텍스트로 서식이 있는 문서를 작성하는데 사용</li>
+  <li>일반 마크업 언어에 비해 문법이 쉽고 간단</li>
+  <li>HTML, 리치텍스트(RTF)등 서식 문서로 변환이 용이
+    <ul>
+      <li>응용 소프트웨어와 함께 배포되는 README 파일이나 온라인 게시물 등에 쓰임</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="0-1-마크다운-에디터">0-1. 마크다운 에디터</h3>
+
+<ul>
+  <li>마크다운 에디터는 메모장이나 아무 에디터를 사용해도 무방</li>
+  <li>단, 미리보기 기능에 따라 사용성에서 큰 차이</li>
+  <li>따라서 미리보기 기능을 제공하는 에디터 사용 추천(대부분의 IDE에서 (기본 or 확장기능으로) 제공하고 있기는 함.)
+    <ul>
+      <li>ex) VS Code</li>
+      <li>미리보기 웹사이트<a href="https://www.makeareadme.com/">(Make a README)</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="1-문법syntax">1. 문법(Syntax)</h2>
+
+<ul>
+  <li>제목 : title
+    <ul>
+      <li>#을 1~6개 사용하여 크기 조절(&lt;H1&gt; ~ &lt;H6&gt; 지원)</li>
+      <li>HR(Horizontal Rule, 수평선 구분자)와 결합해서 사용 가능</li>
+    </ul>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 제목1 - H1
+## 제목2 - H2
+### 제목3 - H3
+#### 제목4 - H4
+##### 제목5 = H5
+###### 제목6 - H6
+
+// HR(Horizontal Rule, 수평선) 구분자와 결합해서 사용
+제목 텍스트 1
+___
+</code></pre></div>    </div>
+
+    <h1 id="제목1---h1">제목1 - H1</h1>
+    <h2 id="제목2---h2">제목2 - H2</h2>
+    <h3 id="제목3---h3">제목3 - H3</h3>
+    <h4 id="제목4---h4">제목4 - H4</h4>
+    <h5 id="제목5--h5">제목5 = H5</h5>
+    <h6 id="제목6---h6">제목6 - H6</h6>
+
+    <p>제목 텍스트 1<br />
+___</p>
+  </li>
+</ul>
+
+:ET
