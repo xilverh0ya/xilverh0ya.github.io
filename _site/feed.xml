@@ -1,4 +1,1027 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-29T15:18:39+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Xilverlog</title><subtitle>느리지만 점점 성장하는 개발자입니다.</subtitle><author><name>이은호</name></author><entry><title type="html">[(작성중)OpenCV_01.Basic and Tutorial]</title><link href="http://localhost:4000/opencv/01_Computer_Vision/" rel="alternate" type="text/html" title="[(작성중)OpenCV_01.Basic and Tutorial]" /><published>2022-04-27T00:00:00+09:00</published><updated>2022-04-27T00:00:00+09:00</updated><id>http://localhost:4000/opencv/01_Computer_Vision</id><content type="html" xml:base="http://localhost:4000/opencv/01_Computer_Vision/"><![CDATA[<head>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-05-02T18:35:16+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Xilverlog</title><subtitle>느리지만 점점 성장하는 개발자입니다.</subtitle><author><name>이은호</name></author><entry><title type="html">[(Programmers 강의) Algorithm with Data Structure 04강 ~ 05강. 재귀 알고리즘(Recursive Algorithms)]</title><link href="http://localhost:4000/algorithm%20&%20data%20structure/03/" rel="alternate" type="text/html" title="[(Programmers 강의) Algorithm with Data Structure 04강 ~ 05강. 재귀 알고리즘(Recursive Algorithms)]" /><published>2022-05-01T00:00:00+09:00</published><updated>2022-05-01T00:00:00+09:00</updated><id>http://localhost:4000/algorithm%20&amp;%20data%20structure/03</id><content type="html" xml:base="http://localhost:4000/algorithm%20&amp;%20data%20structure/03/"><![CDATA[<head>
+  <style>
+    table.dataframe {
+      white-space: normal;
+      width: 100%;
+      height: 240px;
+      display: block;
+      overflow: auto;
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      line-height: 20px;
+      text-align: center;
+      border: 0px !important;
+    }
+
+    table.dataframe th {
+      text-align: center;
+      font-weight: bold;
+      padding: 8px;
+    }
+
+    table.dataframe td {
+      text-align: center;
+      padding: 8px;
+    }
+
+    table.dataframe tr:hover {
+      background: #b8d1f3; 
+    }
+
+    .output_prompt {
+      overflow: auto;
+      font-size: 0.9rem;
+      line-height: 1.45;
+      border-radius: 0.3rem;
+      -webkit-overflow-scrolling: touch;
+      padding: 0.8rem;
+      margin-top: 0;
+      margin-bottom: 15px;
+      font: 1rem Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      color: $code-text-color;
+      border: solid 1px $border-color;
+      border-radius: 0.3rem;
+      word-break: normal;
+      white-space: pre;
+    }
+
+  .dataframe tbody tr th:only-of-type {
+      vertical-align: middle;
+  }
+
+  .dataframe tbody tr th {
+      vertical-align: top;
+  }
+
+  .dataframe thead th {
+      text-align: center !important;
+      padding: 8px;
+  }
+
+  .page__content p {
+      margin: 0 0 0px !important;
+  }
+
+  .page__content p > strong {
+    font-size: 0.8rem !important;
+  }
+
+  </style>
+</head>
+
+<h2 id="재귀-알고리즘recursive-algorithms">재귀 알고리즘(Recursive Algorithms)</h2>
+
+<h4 id="01-재귀함수">01. 재귀함수</h4>
+
+<ul>
+  <li>
+    <p>재귀함수(Recursive Algorithm)란?</p>
+
+    <ul>
+      <li>
+        <p>하나의 함수에서 <strong>자신을 다시 호출</strong>하여 작업을 수행하는 것</p>
+      </li>
+      <li>
+        <p>생각보다 많은 종류의 문제가 재귀적으로(recursively) 해결 가능</p>
+      </li>
+      <li>
+        <p>CS(Computer Science) 분야에서 자주 사용</p>
+      </li>
+    </ul>
+
+    <p><img src="./asset/recur_algo_ex_bin_tree_1.png" alt="예시) 이진 트리1(binary tree)" /></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  - 이진 탐색과 비슷
+</code></pre></div>    </div>
+
+    <p><img src="./asset/recur_algo_ex_bin_tree_2.png" alt="예시) 이진 트리2(binary tree)" /></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  - 이진 트리는 이진 탐색과 비슷한 흐름을 재귀적인 트리 알고리즘으로 구성
+</code></pre></div>    </div>
+
+    <p><img src="./asset/recur_algo_ex_sum_num_1.png" alt="예시) 자연수의 합1" /></p>
+
+    <p><img src="./asset/recur_algo_ex_sum_num_2.png" alt="예시) 자연수의 합2" /></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  - 함수 내에서 자기 자신을 호출
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 자연수의 합 재귀 알고리즘(RecursionError)
+</span>
+<span class="k">def</span> <span class="nf">sum_num</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">n</span> <span class="o">+</span> <span class="n">sum_num</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">sum_num</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># Maximum recursion depth exceeded
+# RecursionError
+# 음수영역까지 끝없이 재귀하기 때문
+</span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">sum_num</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>    <span class="c1"># 어떻게 실행되고 있는지 확인하기 위한 코드(디버깅)
+</span>    <span class="k">return</span> <span class="n">n</span> <span class="o">+</span> <span class="n">sum_num</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">sum_num</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div></div>
+
+<pre>
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+0
+-1
+-2
+-3
+-4
+(중략)
+-2950
+-2951
+-2952
+-2953
+-2954
+</pre>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 자연수의 합 재귀 알고리즘
+</span>
+<span class="k">def</span> <span class="nf">sum_num</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">+</span> <span class="n">sum_num</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    
+<span class="n">sum_num</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</code></pre></div></div>
+
+<pre>
+4
+3
+2
+1
+</pre>
+<pre>
+10
+</pre>
+<ul>
+  <li>
+    <p>재귀 호출의 종결 조건(trival case)</p>
+
+    <ul>
+      <li>
+        <p>위 예제에서 확인했다 싶이 재귀 호출은 <strong>종결 조건(trival case)</strong>이 매우 중요</p>
+      </li>
+      <li>
+        <p>일반적 구조</p>
+      </li>
+    </ul>
+
+    <div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+  <span class="k">def</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+
+      <span class="k">if</span> <span class="n">n</span> <span class="p">...:</span>
+
+          <span class="p">...</span>
+
+          <span class="c1"># 매우 중요!
+</span>
+      <span class="k">else</span><span class="p">:</span>
+
+          <span class="p">...</span>
+
+          <span class="n">function</span><span class="p">(...)</span>
+
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>재귀 알고리즘의 효율</p>
+
+    <ul>
+      <li>모든 재귀 알고리즘은 대칭되는(Counter-Part) 반복 알고리즘이 존재</li>
+    </ul>
+
+    <p><img src="./asset/recur_algo_ex_effi_1.png" alt="예시) 재귀알고리즘 효율1" /></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  - 시간복잡도 자체는 같으나 효율을 비교하면 다른 문제
+
+  - 위 예시의 효율성
+
+  - Reculsive Ver은 함수를 추가로 호출하는 부수적 동작 존재
+
+  - 따라서 Iterartive Ver보다 효율성이 떨어진다고 볼 수 있음
+
+  - 사람이 생각하는 방식을 표현하기에 유리하나
+
+  - 효율적인 측면에서 떨어질 수 있음(**조심해야할 부분**)
+</code></pre></div>    </div>
+
+    <p><img src="./asset/recur_algo_ex_effi_2.png" alt="예시) 재귀알고리즘 효율2" /></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  - 극단적인 예 : 상수시간의 알고리즘
+</code></pre></div>    </div>
+
+    <ul>
+      <li>
+        <p>생각보다 많은 문제가 재귀적으로 풀리긴 하지만</p>
+      </li>
+      <li>
+        <p>또, 재귀적으로 표현된 알고리즘이 사람이 이해하긴 좋지만</p>
+      </li>
+      <li>
+        <p>컴퓨터가 알고리즘 실행 시, 성능이 반드시 좋지는 않음</p>
+      </li>
+      <li>
+        <p>효율적인 측면에도 유념해야하기 때문에 알고리즘, 자료구조 선택이 중요</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 추가 예제(! - 팩토리얼)
+</span>
+<span class="k">def</span> <span class="nf">fac</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>    <span class="c1"># trival case
+</span>        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">fac</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    
+<span class="n">fac</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div></div>
+
+<pre>
+5
+4
+3
+2
+1
+</pre>
+<pre>
+120
+</pre>
+<h4 id="02-과제--fibonacci-순열">02. 과제 : Fibonacci 순열</h4>
+
+<p><img src="./asset/recur_algo_prac_fibo.png" alt="피보나치 순열 설명" /></p>
+
+<ul>
+  <li>
+    <p>Interative Ver VS Recursive Ver</p>
+
+    <ul>
+      <li>둘 다 작성해볼것.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>4강 연습문제(<a href="https://programmers.co.kr/learn/courses/57/lessons/13776">Link</a>)</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Interative Ver
+</span>
+<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">l</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">l</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">2</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">l</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+
+<span class="n">solution</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+</code></pre></div></div>
+
+<pre>
+21
+</pre>
+<p><img src="./asset/Test_answer_04_inter.png" alt="결과1" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Recursive Ver
+</span>
+<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">2</span> <span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">solution</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">solution</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="n">solution</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+</code></pre></div></div>
+
+<pre>
+21
+</pre>
+<p><img src="./asset/Test_answer_04_recur.png" alt="결과2" /></p>
+
+<ul>
+  <li>확실히 Interactive Version이 더 빠른 실행 결과로 통과했다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Recursive Ver
+# 강사님 코드
+</span><span class="k">def</span> <span class="nf">fibo</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span>
+    <span class="k">return</span> <span class="n">fibo</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fibo</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="n">fibo</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+</code></pre></div></div>
+
+<pre>
+21
+</pre>
+<h4 id="03-재귀함수의-유용성">03. 재귀함수의 유용성</h4>
+
+<ul>
+  <li>
+    <p>재귀 알고리즘을 통해 다음 문제 해결</p>
+
+    <ul>
+      <li>
+        <p>조합의 수(n 개의 서로 다른 원소에서 m개를 택하는 경우의 수) 구하기</p>
+
+        <ul>
+          <li>재귀적이지 않은 방법으로 해결</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p><img src="./asset/recur_algo_ex_com_1.png" alt="조합의 수 문제1" /></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  - 재귀적으로 방법으로 해결
+</code></pre></div>    </div>
+
+    <p><img src="./asset/recur_algo_ex_com_2.png" alt="조합의 수 문제2" /></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  - 잘못된 방법
+</code></pre></div>    </div>
+
+    <p><img src="./asset/recur_algo_ex_com_3.png" alt="조합의 수 문제3" /></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  - 올바른 방법
+</code></pre></div>    </div>
+
+    <p><img src="./asset/recur_algo_ex_com_4.png" alt="조합의 수 문제4" /></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  - 하지만 효율성 측면에서는 여전히 좋지 않다
+
+  - combi를 계속해서 호출하기 때문
+
+  - 그렇다면 왜 재귀함수를 쓸까?
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>하노이의 탑 문제</p>
+
+    <ul>
+      <li>
+        <p>재귀 알고리즘이 효율은 떨어진다고 하더라도 사람이 생각하는 방식을 코드로 직접 옮김으로써 유용한 경우가 있다.</p>
+      </li>
+      <li>
+        <p>그 대표적 예가 이 문제</p>
+      </li>
+      <li>
+        <p>한 기둥의 원반들을 전부 다 다른 원반으로 옮기는 문제.</p>
+
+        <ul>
+          <li>단, 더 큰 원반은 더 작은 원반의 위로 올라갈 수 없음</li>
+        </ul>
+      </li>
+      <li>
+        <p>이 문제를 재귀적 알고리즘을 통해 해결하면 편함.</p>
+
+        <ul>
+          <li>나중에 한 번 해볼것!</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 하노이의 탑 도전(작성 예정)
+</span></code></pre></div></div>
+
+<ul>
+  <li>
+    <p>아주 많은 자료구조에 있는 문제 中 <strong>트리</strong>에 해당하는 문제는 재귀 알고리즘으로 푸는게 적당할 수 있음</p>
+
+    <ul>
+      <li>연습문제(빈칸채우기) : 재귀적 이진 탐색</li>
+    </ul>
+
+    <p><img src="./asset/recur_algo_prac_bin_search.png" alt="연습문제" /></p>
+  </li>
+</ul>
+
+<h4 id="04-과제-2">04. 과제 2</h4>
+
+<p>5강 연습문제(<a href="https://programmers.co.kr/learn/courses/57/lessons/13777">Link</a>)</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">u</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">L</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">L</span><span class="p">[</span><span class="n">u</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">l</span> <span class="o">+</span> <span class="n">u</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">L</span><span class="p">[</span><span class="n">mid</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="n">mid</span>
+    <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">L</span><span class="p">[</span><span class="n">mid</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="n">solution</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">solution</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">u</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="./asset/Test_answer_05_1.png" alt="결과1" /></p>
+
+<p><img src="./asset/Test_answer_05_2.png" alt="결과2" /></p>]]></content><author><name>이은호</name></author><category term="Algorithm &amp; Data Structure" /><category term="algorithm" /><category term="data structure" /><category term="basic" /><category term="recursive" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">[(Programmers 강의) Algorithm with Data Structure 03강. 정렬과 탐색(Sorting &amp;amp; Searching)]</title><link href="http://localhost:4000/algorithm%20&%20data%20structure/02/" rel="alternate" type="text/html" title="[(Programmers 강의) Algorithm with Data Structure 03강. 정렬과 탐색(Sorting &amp;amp; Searching)]" /><published>2022-05-01T00:00:00+09:00</published><updated>2022-05-01T00:00:00+09:00</updated><id>http://localhost:4000/algorithm%20&amp;%20data%20structure/02</id><content type="html" xml:base="http://localhost:4000/algorithm%20&amp;%20data%20structure/02/"><![CDATA[<head>
+  <style>
+    table.dataframe {
+      white-space: normal;
+      width: 100%;
+      height: 240px;
+      display: block;
+      overflow: auto;
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      line-height: 20px;
+      text-align: center;
+      border: 0px !important;
+    }
+
+    table.dataframe th {
+      text-align: center;
+      font-weight: bold;
+      padding: 8px;
+    }
+
+    table.dataframe td {
+      text-align: center;
+      padding: 8px;
+    }
+
+    table.dataframe tr:hover {
+      background: #b8d1f3; 
+    }
+
+    .output_prompt {
+      overflow: auto;
+      font-size: 0.9rem;
+      line-height: 1.45;
+      border-radius: 0.3rem;
+      -webkit-overflow-scrolling: touch;
+      padding: 0.8rem;
+      margin-top: 0;
+      margin-bottom: 15px;
+      font: 1rem Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      color: $code-text-color;
+      border: solid 1px $border-color;
+      border-radius: 0.3rem;
+      word-break: normal;
+      white-space: pre;
+    }
+
+  .dataframe tbody tr th:only-of-type {
+      vertical-align: middle;
+  }
+
+  .dataframe tbody tr th {
+      vertical-align: top;
+  }
+
+  .dataframe thead th {
+      text-align: center !important;
+      padding: 8px;
+  }
+
+  .page__content p {
+      margin: 0 0 0px !important;
+  }
+
+  .page__content p > strong {
+    font-size: 0.8rem !important;
+  }
+
+  </style>
+</head>
+
+<h2 id="정렬과-탐색sorting--searching">정렬과 탐색(Sorting &amp; Searching)</h2>
+
+<h4 id="00-들어가기에-앞서">00. 들어가기에 앞서</h4>
+
+<ul>
+  <li>
+    <p>람다함수(lambda)</p>
+
+    <ul>
+      <li>
+        <p>런타임에서 생성, 사용할 수 있는 익명 함수</p>
+      </li>
+      <li>
+        <p>주로 filter(), map(), reduce()와 같은 전형적인 기능 개념과 함께 사용</p>
+      </li>
+      <li>
+        <p>쓰고 버리는 일시적인 함수</p>
+
+        <ul>
+          <li>
+            <p>함수가 생성된 곳에서만 필요</p>
+          </li>
+          <li>
+            <p>간단한 기능을 필요한 곳에서 즉시 사용하고 버림</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>람다의 정의</p>
+  </li>
+</ul>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">lambda</span> <span class="p">[</span><span class="n">인자리스트</span><span class="p">]:</span> <span class="p">[</span><span class="n">표현식</span><span class="p">]</span>
+
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- return문 포함하지 않음
+
+- 반환값은 표현식에 의해 만들어짐
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 활용 예시
+</span>
+<span class="k">def</span> <span class="nf">inc</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">n</span>
+   
+<span class="n">f</span> <span class="o">=</span> <span class="n">inc</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">inc</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">12</span><span class="p">))</span>
+<span class="c1"># 14 (2 + 12)
+</span><span class="k">print</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="mi">12</span><span class="p">))</span>
+<span class="c1"># 16 (4 + 12)
+</span><span class="k">print</span><span class="p">(</span><span class="n">inc</span><span class="p">(</span><span class="mi">2</span><span class="p">)(</span><span class="mi">12</span><span class="p">))</span>
+<span class="c1"># 14 (2 + 12)
+</span></code></pre></div></div>
+
+<pre>
+14
+16
+14
+</pre>
+<p><em>기능 함수와 같이 쓰는 Lambda</em></p>
+
+<ul>
+  <li>
+    <ol>
+      <li>map() : 내장 함수</li>
+    </ol>
+
+    <ul>
+      <li>
+        <p>2개의 인자</p>
+      </li>
+      <li>
+        <p>function을 iterable의 모든 요소에 대해 적용</p>
+      </li>
+      <li>
+        <p>function에 의해 변경된 iterator 반환</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nb">map</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="n">iterable</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">14</span><span class="p">]</span>
+<span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+</code></pre></div></div>
+
+<pre>
+[14, 18, 20, 18]
+</pre>
+<ul>
+  <li>
+    <ol>
+      <li>filter() : 내장 함수</li>
+    </ol>
+
+    <ul>
+      <li>
+        <p>2개의 인자</p>
+      </li>
+      <li>
+        <p>interable의 각각의 요소에 대해 Boolean 값 반환</p>
+      </li>
+      <li>
+        <p>True면 남고, False면 제거</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nb">filter</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="n">iterable</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">27</span><span class="p">]</span>
+<span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">a</span><span class="p">))</span>
+</code></pre></div></div>
+
+<pre>
+[18, 9, 24, 12, 27]
+</pre>
+<ul>
+  <li>
+    <ol>
+      <li>reduce() : <strong>외장</strong> 함수</li>
+    </ol>
+
+    <ul>
+      <li>
+        <p>2개의 필수 인자와 하나의 옵션 인자</p>
+      </li>
+      <li>
+        <p>function을 사용해서 iterable을 하나의 값으로 줄인다는 개념</p>
+      </li>
+      <li>
+        <p>Initializer : 첫 번째 인자로 추가됨</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">functools</span><span class="p">.</span><span class="nb">reduce</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="n">iterable</span><span class="p">[,</span> <span class="n">initializer</span><span class="p">])</span>
+
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
+<span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<pre>
+16
+</pre>
+<h4 id="01-정렬sort">01. 정렬(Sort)</h4>
+
+<ul>
+  <li>
+    <p>정렬이란?</p>
+
+    <ul>
+      <li>복수의 원소로 주어진 데이터를 <strong>정해진 기준</strong>에 따라 새로 늘어놓는 작업</li>
+    </ul>
+
+    <p><img src="./asset/sort_ex_asc.png" alt="예시)오름차순 정렬" /></p>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>Python 리스트의 정렬 1. sorted()</p>
+
+    <ul>
+      <li>
+        <p>내장 함수(built-in function)</p>
+      </li>
+      <li>
+        <p>정렬된 새로운 리스트를 얻어냄</p>
+      </li>
+    </ul>
+
+    <div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+  <span class="nb">sorted</span><span class="p">(</span><span class="n">function</span><span class="p">)</span>
+
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sorted</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>                     <span class="c1"># 오름차순
+</span></code></pre></div></div>
+
+<pre>
+[2, 3, 6, 7, 8, 9, 10]
+</pre>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sorted</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">reverse</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>    <span class="c1"># 내림차순(Reverse : 역순 정렬)
+</span></code></pre></div></div>
+
+<pre>
+[10, 9, 8, 7, 6, 3, 2]
+</pre>
+<ul>
+  <li>
+    <p>Python 리스트의 정렬 2. sort()</p>
+
+    <ul>
+      <li>
+        <p>리스트이 메서드(method)</p>
+      </li>
+      <li>
+        <p>해당 리스트를 정렬</p>
+      </li>
+    </ul>
+
+    <div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+  <span class="nb">list</span><span class="p">.</span><span class="n">sort</span><span class="p">()</span>
+
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">L</span><span class="p">.</span><span class="n">sort</span><span class="p">()</span>                   <span class="c1"># 오름차순
+</span><span class="n">L</span>
+</code></pre></div></div>
+
+<pre>
+[2, 3, 6, 7, 8, 9, 10]
+</pre>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">L</span><span class="p">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>    <span class="c1"># 내림차순(Reverse : 역순 정렬)
+</span><span class="n">L</span>
+</code></pre></div></div>
+
+<pre>
+[10, 9, 8, 7, 6, 3, 2]
+</pre>
+<ul>
+  <li>
+    <p>문자열로 이루어진 리스트의 경우</p>
+
+    <ul>
+      <li>
+        <p>정렬 순서 : 사전 순서(알파벳 순)</p>
+      </li>
+      <li>
+        <p>대문자를 소문자보다 우선</p>
+      </li>
+      <li>
+        <p>문자열의 길이 = 크기 X</p>
+
+        <ul>
+          <li>문자열 길이 순서로 정렬하는 법 : 정렬에 이용하는 <strong>키(key)</strong> 지정(길이를 키로 지정)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="s">'abcd'</span><span class="p">,</span> <span class="s">'xyz'</span><span class="p">,</span> <span class="s">'spam'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 문자열의 길이 순으로 정렬
+</span><span class="nb">sorted</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>    <span class="c1"># lambda 를 사용, 정렬의 키를 지정
+# 같은 길이라면 원래의 순서를 적용
+</span></code></pre></div></div>
+
+<pre>
+['xyz', 'abcd', 'spam']
+</pre>
+<ul>
+  <li>정렬에서 키를 지정하는 또 다른 예</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">L</span> <span class="o">=</span> <span class="p">[{</span><span class="s">'name'</span> <span class="p">:</span> <span class="s">'John'</span><span class="p">,</span> <span class="s">'score'</span> <span class="p">:</span> <span class="mi">83</span><span class="p">},</span>
+      <span class="p">{</span><span class="s">'name'</span> <span class="p">:</span> <span class="s">'Paul'</span><span class="p">,</span> <span class="s">'score'</span> <span class="p">:</span> <span class="mi">92</span><span class="p">}]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">L</span><span class="p">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s">'name'</span><span class="p">])</span>    <span class="c1"># 레코드들을 이름의 알파벳 순서대로 정렬
+</span><span class="n">L</span>
+<span class="c1"># 레코드? : 여러 데이터의 복합으로 이루어진 데이터 원소
+</span></code></pre></div></div>
+
+<pre>
+[{'name': 'John', 'score': 83}, {'name': 'Paul', 'score': 92}]
+</pre>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">L</span><span class="p">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s">'score'</span><span class="p">],</span> <span class="n">reverse</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>    <span class="c1"># 레코드들을 점수 높은 순서대로 정렬
+</span><span class="n">L</span>
+</code></pre></div></div>
+
+<pre>
+[{'name': 'Paul', 'score': 92}, {'name': 'John', 'score': 83}]
+</pre>
+<h4 id="02-탐색search">02. 탐색(Search)</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- 탐색이란?
+
+    - 복수의 원소로 이루어진 데이터에서 특정 원소를 찾아내는 작업.
+</code></pre></div></div>
+
+<ol>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>선형 탐색</td>
+          <td> </td>
+          <td>순차 탐색 (Linear Search</td>
+          <td> </td>
+          <td>Sequential Search)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <ul>
+      <li>
+        <p>리스트의 길이에 비례하는 시간 소요 : O(n)</p>
+      </li>
+      <li>
+        <p>최악의 경우 : 모든 원소를 모두 비교</p>
+      </li>
+    </ul>
+
+    <p><img src="./asset/search_ex_linear.png" alt="예시) 선형탐색" /></p>
+  </li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 선형 탐색 코드 구현
+</span>
+<span class="k">def</span> <span class="nf">linear_search</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>    <span class="c1"># L : 탐색의 대상 리스트, x 찾으려고 하는 원소
+</span>    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)</span> <span class="ow">and</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">x</span><span class="p">:</span>    <span class="c1"># L의 마지막 원소까지 검사하거나, 찾으면 멈춤
+</span>        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>    <span class="c1"># 리스트 내에 있으면
+</span>        <span class="k">return</span> <span class="n">i</span>     <span class="c1"># 찾은 위치 반환
+</span>    <span class="k">else</span><span class="p">:</span>            <span class="c1"># 없으면
+</span>        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">S</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="n">linear_search</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</code></pre></div></div>
+
+<pre>
+4
+</pre>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">linear_search</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<pre>
+-1
+</pre>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">S</span><span class="p">.</span><span class="n">index</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>    <span class="c1"># index() 함수 : 선형탐색
+</span></code></pre></div></div>
+
+<pre>
+4
+</pre>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">S</span><span class="p">.</span><span class="n">index</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>    <span class="c1"># 리스트에 없는 요소를 탐색하면 ValueError
+</span></code></pre></div></div>
+
+<ol>
+  <li>
+    <p>이진 탐색(Binary Search)</p>
+
+    <ul>
+      <li>
+        <p>탐색하려는 리스트가 이미 정렬되어 있는 경우에만 적용 가능</p>
+      </li>
+      <li>
+        <p><strong>크기 순으로 정렬</strong>되어 있다는 성질 이용!</p>
+      </li>
+    </ul>
+
+    <p><img src="./asset/search_ex_binary_1.png" alt="예시) 이진탐색_1" /></p>
+
+    <ul>
+      <li>
+        <p>lower, uppper, middle 생성 후, middle과 탐색값 비교</p>
+
+        <ul>
+          <li>
+            <p>탐색값 == middle : 탐색 완료</p>
+          </li>
+          <li>
+            <p>탐색값 &gt; middle : lower ~ middle 무시</p>
+          </li>
+          <li>
+            <p>탐색값 &lt; middle : middle ~ upper 무시</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <p><img src="./asset/search_ex_binary_2.png" alt="예시) 이진탐색_1" /></p>
+
+    <p><img src="./asset/search_ex_binary_3.png" alt="예시) 이진탐색_1" /></p>
+
+    <p><img src="./asset/search_ex_binary_4.png" alt="예시) 이진탐색_1" /></p>
+
+    <p><img src="./asset/search_ex_binary_5.png" alt="예시) 이진탐색_1" /></p>
+
+    <ul>
+      <li>
+        <p>한 번 비교가 일어날 떄마다 리스트 반씩 줄임(Divide &amp; Conquer) : O(log n)</p>
+
+        <ul>
+          <li>분할정복(Divide &amp; Conquer) : 기존의 문제를 해결하기 쉬운 단위로 나눠서 해결한 후 다시 합침</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 이진 탐색 코드 구현
+</span><span class="k">def</span> <span class="nf">binary_search</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>    
+    <span class="n">lower</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">upper</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+    
+    <span class="k">while</span> <span class="n">lower</span> <span class="o">&lt;=</span> <span class="n">upper</span><span class="p">:</span>
+        <span class="n">middle</span> <span class="o">=</span> <span class="p">(</span><span class="n">lower</span> <span class="o">+</span> <span class="n">upper</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+        <span class="k">if</span> <span class="n">L</span><span class="p">[</span><span class="n">middle</span><span class="p">]</span> <span class="o">==</span> <span class="n">x</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">middle</span>
+            <span class="k">break</span>
+        <span class="k">elif</span> <span class="n">L</span><span class="p">[</span><span class="n">middle</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">:</span>
+            <span class="n">lower</span> <span class="o">=</span> <span class="n">middle</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">upper</span> <span class="o">=</span> <span class="n">middle</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">S</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">24</span> <span class="p">,</span><span class="mi">30</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">62</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">binary_search</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+</code></pre></div></div>
+
+<pre>
+9
+</pre>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">binary_search</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+</code></pre></div></div>
+
+<pre>
+-1
+</pre>
+<ol>
+  <li>
+    <p>선형 탐색과 이진 탐색의 성능 차이</p>
+
+    <ul>
+      <li>
+        <p>10만개의 원소 중, 1000개의 숫자를 찾아보기</p>
+      </li>
+      <li>
+        <p>결과(강사님의 예시)</p>
+      </li>
+    </ul>
+
+    <p><img src="./asset/search_diff_lin_bin.png" alt="예시)선형 탐색과 이진 탐색의 성능 차이" /></p>
+
+    <ul>
+      <li>
+        <p>효율적인 자료구조, 알고리즘을 사용해야하는 이유 : 성능 차이</p>
+      </li>
+      <li>
+        <p>무조건 이진 탐색이 옳은게 아니라, 때에 따라서는 선형 탐색이 더 나을 수 있음</p>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="03-과제">03. 과제</h4>
+
+<p>3강 실습(<a href="https://programmers.co.kr/learn/courses/57/lessons/13775">Link</a>)</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="n">lower</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">upper</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+    
+    <span class="k">while</span> <span class="n">lower</span> <span class="o">&lt;=</span> <span class="n">upper</span><span class="p">:</span>
+        <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">lower</span> <span class="o">+</span> <span class="n">upper</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+        <span class="k">if</span> <span class="n">L</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">==</span> <span class="n">x</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">mid</span>
+            <span class="k">break</span>
+        <span class="k">elif</span> <span class="n">L</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">:</span>
+            <span class="n">lower</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">upper</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="o">-</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<p><img src="./asset/Test_answer_03_1.png" alt="Test_answer1" /></p>
+
+<p><img src="./asset/Test_answer_03_2.png" alt="Test_answer2" /></p>]]></content><author><name>이은호</name></author><category term="Algorithm &amp; Data Structure" /><category term="algorithm" /><category term="data structure" /><category term="basic" /><category term="sorting" /><category term="searching" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">[(작성중)OpenCV_01.Basic and Tutorial]</title><link href="http://localhost:4000/opencv/01_Computer_Vision/" rel="alternate" type="text/html" title="[(작성중)OpenCV_01.Basic and Tutorial]" /><published>2022-04-27T00:00:00+09:00</published><updated>2022-04-27T00:00:00+09:00</updated><id>http://localhost:4000/opencv/01_Computer_Vision</id><content type="html" xml:base="http://localhost:4000/opencv/01_Computer_Vision/"><![CDATA[<head>
   <style>
     table.dataframe {
       white-space: normal;

@@ -1,4 +1,4 @@
-I"�0<p>A list of all the posts and pages found on the site. For you robots out there is an <a href="/sitemap.xml">XML version</a> available for digesting as well.</p>
+I"9<p>A list of all the posts and pages found on the site. For you robots out there is an <a href="/sitemap.xml">XML version</a> available for digesting as well.</p>
 
 <h2>Pages</h2>
 
@@ -15,6 +15,7 @@
 
     <p class="archive__item-excerpt" itemprop="description">Page not found. Your pixels are in another canvas.
 </p>
+    
   </article>
 </div>
 
@@ -29,6 +30,7 @@
     
 
 
+    
     
   </article>
 </div>
@@ -45,6 +47,7 @@
 
 
     
+    
   </article>
 </div>
 
@@ -59,6 +62,7 @@
     
 
 
+    
     
   </article>
 </div>
@@ -75,6 +79,7 @@
 
 
     
+    
   </article>
 </div>
 
@@ -90,6 +95,7 @@
 
 
     
+    
   </article>
 </div>
 
@@ -104,6 +110,7 @@
     
 
 
+    
     
   </article>
 </div>
@@ -121,6 +128,7 @@
 
     <p class="archive__item-excerpt" itemprop="description">A flexible two-column Jekyll theme. Perfect for building personal sites, blogs, and portfolios. Latest release v4.20.2
 </p>
+    
   </article>
 </div>
 
@@ -135,6 +143,7 @@
     
 
 
+    
     
   </article>
 </div>
@@ -151,6 +160,7 @@
 
 
     
+    
   </article>
 </div>
 
@@ -165,6 +175,7 @@
     
 
 
+    
     
   </article>
 </div>
@@ -181,6 +192,7 @@
 
 
     
+    
   </article>
 </div>
 
@@ -195,6 +207,7 @@
     
 
 
+    
     
   </article>
 </div>
@@ -211,6 +224,7 @@
 
 
     
+    
   </article>
 </div>
 
@@ -225,6 +239,7 @@
     
 
 
+    
     
   </article>
 </div>
@@ -241,6 +256,7 @@
 
 
     
+    <span class="page__date"><i class="far fa-clock" aria-hidden="true"></i>2011-06-23</span>
   </article>
 </div>
 
@@ -255,6 +271,7 @@
     
 
 
+    
     
   </article>
 </div>
@@ -271,6 +288,7 @@
 
 
     
+    <span class="page__date"><i class="far fa-clock" aria-hidden="true"></i>2011-06-23</span>
   </article>
 </div>
 
@@ -285,6 +303,7 @@
     
 
 
+    
     
   </article>
 </div>
@@ -301,6 +320,7 @@
 
 
     
+    
   </article>
 </div>
 
@@ -315,6 +335,7 @@
     
 
 
+    
     
   </article>
 </div>
@@ -331,6 +352,7 @@
 
 
     
+    
   </article>
 </div>
 
@@ -346,6 +368,7 @@
 
 
     
+    <span class="page__date"><i class="far fa-clock" aria-hidden="true"></i>2016-02-24</span>
   </article>
 </div>
 
@@ -360,6 +383,7 @@
     
 
 
+    
     
   </article>
 </div>
@@ -377,6 +401,7 @@
 
     <p class="archive__item-excerpt" itemprop="description">Bacon ipsum dolor sit amet salami ham hock ham, hamburger corned beef short ribs kielbasa biltong t-bone drumstick tri-tip tail sirloin pork chop.
 </p>
+    <span class="page__date"><i class="far fa-clock" aria-hidden="true"></i>2016-03-23</span>
   </article>
 </div>
 
@@ -391,6 +416,7 @@
     
 
 
+    
     
   </article>
 </div>
@@ -407,6 +433,7 @@
 
 
     
+    
   </article>
 </div>
 
@@ -421,6 +448,7 @@
     
 
 
+    
     
   </article>
 </div>
@@ -437,6 +465,7 @@
 
 
     
+    
   </article>
 </div>
 
@@ -451,6 +480,7 @@
     
 
 
+    
     
   </article>
 </div>
@@ -467,6 +497,7 @@
 
 
     
+    
   </article>
 </div>
 
@@ -482,10 +513,49 @@
 
 
     
+    
   </article>
 </div>
 
 <h2>Posts</h2>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm%20&amp;%20data%20structure/03/" rel="permalink">[(Programmers 강의) Algorithm with Data Structure 04강 ~ 05강. 재귀 알고리즘(Recursive Algorithms)]
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  
+</p>
+    <span class="page__date"><i class="far fa-clock" aria-hidden="true"></i>2022-05-01</span>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm%20&amp;%20data%20structure/02/" rel="permalink">[(Programmers 강의) Algorithm with Data Structure 03강. 정렬과 탐색(Sorting &amp; Searching)]
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  
+</p>
+    <span class="page__date"><i class="far fa-clock" aria-hidden="true"></i>2022-05-01</span>
+  </article>
+</div>
 
 <div class="list__item">
   <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
@@ -502,6 +572,7 @@
     <p class="archive__item-excerpt" itemprop="description">
   
 </p>
+    <span class="page__date"><i class="far fa-clock" aria-hidden="true"></i>2022-04-27</span>
   </article>
 </div>
 
@@ -519,6 +590,7 @@
 
     <p class="archive__item-excerpt" itemprop="description">
 </p>
+    <span class="page__date"><i class="far fa-clock" aria-hidden="true"></i>2022-03-04</span>
   </article>
 </div>
 
@@ -536,6 +608,7 @@
 
     <p class="archive__item-excerpt" itemprop="description">
 </p>
+    <span class="page__date"><i class="far fa-clock" aria-hidden="true"></i>2022-03-03</span>
   </article>
 </div>
 
@@ -553,6 +626,7 @@
 
     <p class="archive__item-excerpt" itemprop="description">
 </p>
+    <span class="page__date"><i class="far fa-clock" aria-hidden="true"></i>2022-03-02</span>
   </article>
 </div>
 
@@ -570,6 +644,7 @@
 
     <p class="archive__item-excerpt" itemprop="description">
 </p>
+    <span class="page__date"><i class="far fa-clock" aria-hidden="true"></i>2022-03-01</span>
   </article>
 </div>
 

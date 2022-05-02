@@ -1,4 +1,4 @@
-I"r4<p>A list of all the posts and pages found on the site. For you robots out there is an <a href="/sitemap.xml">XML version</a> available for digesting as well.</p>
+I"�8<p>A list of all the posts and pages found on the site. For you robots out there is an <a href="/sitemap.xml">XML version</a> available for digesting as well.</p>
 
 <h2>Pages</h2>
 
@@ -518,6 +518,44 @@
 </div>
 
 <h2>Posts</h2>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/coding/03/" rel="permalink">jupyter notebook 변환하기!
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  
+</p>
+    <span class="page__date"><i class="far fa-clock" aria-hidden="true"></i>2022-05-02</span>
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm%20&amp;%20data%20structure/02/" rel="permalink">[(Programmers 강의) Algorithm with Data Structure 03강. 정렬과 탐색(Sorting &amp; Searching)]
+</a>
+      
+    </h2>
+    
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  
+</p>
+    <span class="page__date"><i class="far fa-clock" aria-hidden="true"></i>2022-05-02</span>
+  </article>
+</div>
 
 <div class="list__item">
   <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
