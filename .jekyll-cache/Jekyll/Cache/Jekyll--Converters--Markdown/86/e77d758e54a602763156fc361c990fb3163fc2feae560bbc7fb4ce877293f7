@@ -1,0 +1,244 @@
+I"5%<head>
+  <style>
+    table.dataframe {
+      white-space: normal;
+      width: 100%;
+      height: 240px;
+      display: block;
+      overflow: auto;
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      line-height: 20px;
+      text-align: center;
+      border: 0px !important;
+    }
+
+    table.dataframe th {
+      text-align: center;
+      font-weight: bold;
+      padding: 8px;
+    }
+
+    table.dataframe td {
+      text-align: center;
+      padding: 8px;
+    }
+
+    table.dataframe tr:hover {
+      background: #b8d1f3; 
+    }
+
+    .output_prompt {
+      overflow: auto;
+      font-size: 0.9rem;
+      line-height: 1.45;
+      border-radius: 0.3rem;
+      -webkit-overflow-scrolling: touch;
+      padding: 0.8rem;
+      margin-top: 0;
+      margin-bottom: 15px;
+      font: 1rem Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      color: $code-text-color;
+      border: solid 1px $border-color;
+      border-radius: 0.3rem;
+      word-break: normal;
+      white-space: pre;
+    }
+
+  .dataframe tbody tr th:only-of-type {
+      vertical-align: middle;
+  }
+
+  .dataframe tbody tr th {
+      vertical-align: top;
+  }
+
+  .dataframe thead th {
+      text-align: center !important;
+      padding: 8px;
+  }
+
+  .page__content p {
+      margin: 0 0 0px !important;
+  }
+
+  .page__content p > strong {
+    font-size: 0.8rem !important;
+  }
+
+  </style>
+</head>
+
+<h3 id="자료구조와-알고리즘">자료구조와 알고리즘</h3>
+
+<h4 id="0-들어가기에-앞서">0. 들어가기에 앞서</h4>
+
+<ul>
+  <li>대상 : Python 언어에 대해 어느정도 지식이 있는 사람(기초 문법, 구조, 자료형)</li>
+</ul>
+
+<p>0-1. Python 언어의 몇가지 기초적인 자료형</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"This is String"</span>        <span class="c1"># 문자열(str)
+</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>            <span class="c1"># 리스트(list)
+</span><span class="p">{</span><span class="s">'a'</span> <span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s">'bc'</span> <span class="p">:</span> <span class="mi">4</span><span class="p">}</span>     <span class="c1"># 사전(dict)
+# 이 외에 순서쌍(tuple), 집합(set), 등등 존재
+</span></code></pre></div></div>
+
+<pre>
+{'a': 6, 'bc': 4}
+</pre>
+<p>웬만한 것들은</p>
+
+<p>Python에서 이미 제공하는 데이터 타입으로</p>
+
+<p>다 해결할 수 있을것 같은데…?</p>
+
+<p><strong>자료구조(Data Structure)</strong>는 대체 왜 알아야 하는걸까?</p>
+
+<ul>
+  <li>
+    <p>Python에서 제공하는 기본적인 자료형들로 <em>해결할 수 없는</em>, 또는 <em>어려운</em>, <em>효율적이지 않은</em> 문제들을 해결하기 위해서!</p>
+  </li>
+  <li>
+    <p>우리가 해결해야 할 문제의 종류에 따라 <strong>적합한 자료구조</strong>는 달라짐.</p>
+  </li>
+  <li>
+    <p>앞으로 어떤 문제 종류에 어떤 자료구조가 적합한지 <strong>예제</strong>를 보면서 학습할 예정</p>
+  </li>
+</ul>
+
+<h4 id="1-알고리즘">1. 알고리즘</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 작성된 리스트에서 최대치를 찾는데 걸리는 시간을 알아보자
+</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">"Number of elemnts : "</span><span class="p">))</span>
+<span class="n">haystack</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"Searching for the maximum value..."</span><span class="p">)</span>
+
+<span class="c1"># 프로그램 실행 시간을 재는 부분
+</span><span class="n">ts</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>              <span class="c1"># 현재 시각의 타임 스탬프
+</span><span class="n">maximum</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">haystack</span><span class="p">)</span>
+<span class="n">elapsed</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">ts</span>    <span class="c1"># 실행 종료 후의 타임 스탬프에서 실행 전 시간을 뺌(실질적인 실행 시간)
+</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Maximum element = %d, Elapsed time = %.2f"</span> <span class="o">%</span> <span class="p">(</span><span class="n">maximum</span><span class="p">,</span> <span class="n">elapsed</span><span class="p">))</span>
+</code></pre></div></div>
+
+<pre>
+Number of elemnts : 100000000
+Searching for the maximum value...
+Maximum element = 99999999, Elapsed time = 1.44
+</pre>
+<ul>
+  <li>
+    <p>어떤 리스트에서 최댓값을 찾기 위해서는 리스트의 모든 요소를 검사해야 한다.</p>
+
+    <ul>
+      <li>
+        <p>요소수가 백만, 천만, 억… 이면 요소수 만큼 검사를 진행하기 때문에</p>
+      </li>
+      <li>
+        <p>점점 프로그램의 실행 시간이 늘어남</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="1-1-알고리즘이란">1-1. 알고리즘이란?</h5>
+
+<ul>
+  <li>
+    <p>[사전적 정의] : 어떤 문제를 해결하기 위한 절차, 방법, 명령어들의 집합</p>
+  </li>
+  <li>
+    <p>[프로그래밍] : 주어진 문제의 해결을 위한 자료구조와 연산 방법에 대한 선택</p>
+  </li>
+</ul>
+
+<p><strong>549를 찾아보세요 1.</strong></p>
+
+<p><img src="/assets/asset/find5492.png" height="550px" width="600px" /></p>
+
+<hr />
+
+<p><strong>549를 찾아보세요 2.</strong></p>
+
+<p><img src="./asset/find5492.png" alt="549" /></p>
+
+<hr />
+
+<p><strong>549를 찾아보세요 1. 정답</strong></p>
+
+<p><img src="./asset/find5491_answer.png" alt="549" /></p>
+
+<hr />
+
+<p><strong>549를 찾아보세요 2. 정답</strong></p>
+
+<p><img src="./asset/find5492_answer.png" alt="549" /></p>
+
+<hr />
+
+<p>1번과 달리 2번은 정렬되어 있기 때문에 대부분 1번보다 일찍 찾아냈을 것이다.</p>
+
+<ul>
+  <li>
+    <p>순서대로 있기 때문에 더 쉽다!</p>
+  </li>
+  <li>
+    <p>이와 같이 무슨 일을 하냐에 따라서 최적의 해법은 다르다.</p>
+  </li>
+</ul>
+
+<p>해결하고자 하는 문제에 따라(응용 종류와 범위에 따라)</p>
+
+<p>최적의 해법은 서로 다르다.</p>
+
+<ul>
+  <li>이 선택을 어떻게 해야 하느냐를 알기 위해 <strong>자료구조</strong>를 이해해야 함.</li>
+</ul>
+
+<h4 id="2-과제--프로그래머스-테스트에-익숙해지기">2. 과제 : 프로그래머스 테스트에 익숙해지기</h4>
+
+<p><strong>1강 실습 : 리스트 원소 합</strong></p>
+
+<p><a href="https://programmers.co.kr/learn/courses/57/lessons/13772">Link</a></p>
+
+<p>입력으로 주어지는 리스트 x 의 첫 원소와 마지막 원소의 합을 리턴하는 함수 solution()을 완성하세요.</p>
+
+<pre><code class="language-py3">
+def solution(x):
+
+    answer = 0
+
+    answer = x[0] + x[(len(x) - 1)]
+
+    return answer
+
+</code></pre>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># My answer
+</span>
+<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">answer</span>
+</code></pre></div></div>
+
+<ul>
+  <li>실행 결과</li>
+</ul>
+
+<p><img src="./asset/Test_answer_01.png" alt="result" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Teacher answer
+</span>
+<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">answer</span>
+</code></pre></div></div>
+:ET
